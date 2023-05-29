@@ -16,4 +16,3 @@ else:
     last_digit = 0
     size = "and is 0"
 print(f"Last digit of {number} is {last_digit} {size}")
- 
