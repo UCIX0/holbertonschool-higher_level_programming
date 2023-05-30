@@ -7,4 +7,3 @@ for i in range(25, 0, -2):
     icc = chr(ic)
     occ = chr(oc)
     print("{}{}".format(icc, occ), end="")
-
