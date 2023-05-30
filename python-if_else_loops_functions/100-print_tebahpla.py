@@ -6,4 +6,5 @@ for i in range(25, 0, -2):
     oc = o + 63
     icc = chr(ic)
     occ = chr(oc)
-    print(f"{icc}{occ}", end="")
+    print("{}{}".format(icc, occ), end="")
+
