@@ -22,4 +22,3 @@ def roman_to_int(roman_string):
             total_value += roman_to_integer[roman_string[i]]
             i += 1
     return total_value
-
