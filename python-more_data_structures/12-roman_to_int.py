@@ -1,18 +1,25 @@
 #!/usr/bin/python3
-roman_to_int = __import__('12-roman_to_int').roman_to_int
+def roman_to_int(roman_string):
+    if not isinstance(roman_string, str) or roman_string is None:
+        return 0
 
-roman_number = "X"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+    roman_to_integer = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100,
+                        'D': 500, 'M': 1000}
+    total_value = 0
+    i = 0
 
-roman_number = "VII"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+    while i < len(roman_string):
+        # Check for subtractive case
+        if (i + 1 < len(roman_string) and
+                roman_to_integer[roman_string[i]]
+                < roman_to_integer[roman_string[i+1]]):
 
-roman_number = "IX"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
-
-roman_number = "LXXXVII"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
-
-roman_number = "DCCVII"
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+            total_value += (roman_to_integer[roman_string[i+1]]
+                            - roman_to_integer[roman_string[i]])
+            i += 2
+        # Not subtractive case
+        else:
+            total_value += roman_to_integer[roman_string[i]]
+            i += 1
+    return total_value
 
