@@ -14,3 +14,13 @@ def pascal_triangle(n):
             row.append(1)
         pascal_list.append(row)
     return
+
+def print_triangle(triangle):
+    """
+    Print the triangle
+    """
+    for row in triangle:
+        print("[{}]".format(",".join([str(x) for x in row])))
+
+
+print_triangle(pascal_triangle(5))
